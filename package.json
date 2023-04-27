@@ -1,5 +1,5 @@
 {
-  "name": "phonebook-backend",
+  "name": "phonebook-fullst",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf build && cd ./frontend && npm run build && cp -r build ../../phonebook-fullstack",
+    "build:ui": "rm -rf build && cd ./frontend && npm run build && cp -r build ../../phonebook-fullstack && rm -rf phonebook-fullstack",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "",

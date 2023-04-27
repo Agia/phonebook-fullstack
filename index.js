@@ -1,7 +1,8 @@
 // Imports
 const express = require('express');
 const morgan = require('morgan')
-const cors = require('cors')
+const cors = require('cors');
+// const { log } = require('console');
 
 // Create Express server
 const app = express();
@@ -9,7 +10,8 @@ const app = express();
 app.use(express.json())
 
 // Use cors middleware to allow cross port interaction between front and backend
-app.use(cors)
+// Disabled cors as breaking app
+// app.use(cors)
 
 // Use built-in express middleware for serving static content (index.html, js, etc.) - each GET request, express will look in 'build' dir for relevant files
 app.use(express.static('build'))
@@ -131,8 +133,10 @@ app.post('/api/persons', (request, response) => {
 	response.json(person);
 });
 
+console.log("Hela World!");
+
 // Creates a server on the assigned PORT variable and adds a console.log
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
