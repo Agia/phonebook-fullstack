@@ -1,6 +1,5 @@
 import axios from 'axios'
-// const baseURL = 'http://localhost:3000/persons'
-// Altered baseURL variable to relative for backend/frontend once express introduced
+
 const baseURL = '/api/persons'
 
 const getData = () => {
@@ -8,9 +7,10 @@ const getData = () => {
     return request.then(response => response.data)
 }
 
-const addData = (newEntry) => {
+const addData = async (newEntry) => {
     const request = axios.post(baseURL, newEntry)
-    return request.then(response => response.data)
+    const response = await request
+    return response.data
 }
 
 

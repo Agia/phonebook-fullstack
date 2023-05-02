@@ -8,10 +8,6 @@ import { getData, addData, deleteData, updateData } from "./services/data";
 
 const App = () => {
 
-  useEffect(() => {
-    refreshData()
-  }, [])
-
   const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
@@ -21,6 +17,18 @@ const App = () => {
   })
   const [message, setMessage] = useState(null)
   const [alertShow, setAlertShow] = useState(false)
+
+  useEffect(() => {
+    refreshData()
+  }, [])
+
+  // useEffect(() => {
+	// 	getData()
+  //   .then((personData) => {
+	// 		setPersons(personData);
+	// 	});
+	// }, []);
+
 
   useEffect(() => {
     let timerID = setTimeout(() => {
